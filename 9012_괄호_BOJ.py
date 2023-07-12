@@ -60,7 +60,10 @@ for i in range(T):
                 break
 
     if not stack and VPS :
-        print("Yes")
+        print("YES")
 
     else :
-        print("No")
+        print("NO")
+
+## 여태까지 헛짓을 했다... output이 YES, NO 인데 Yes, No로 하고 제출을 여러번했다..
+## 코드가 뭐가 틀렸나 했지만... 그게 아니었다.. 문제를 제대로 읽고 하자...
