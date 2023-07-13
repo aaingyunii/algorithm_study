@@ -33,6 +33,26 @@
 
 from collections import deque
 
-a = deque([4,1,3,5,7,1,2,3])
+def solution(priorities, location):
+    q = deque(priorities)
+    answer = 0
 
-print(max(a))
+    while q :
+        q_max = max(q)
+        location -= 1 # 찾은 location의 answer을 반환하기위해서
+        q_1 = q.popleft()
+
+        if q_1 == q_max:
+            answer += 1
+            if location < 0:
+                break
+        else :
+            q.append(q_1)
+            if location < 0:
+                location = len(q)-1 # 종료하지 못한 프로세스의 index를 따라간다.
+            
+    return answer
+
+## 이 문제에서 해답은 Max 값을 찾기다. Max를 찾으면 pop 시키고 나머지 중 다시 Max를 찾아 계속 pop 진행한다.
+## 큐의 특성 : 선입 선출, + 우선순위(max) => 인덱스 0번의 값이 Max인지를 확인하고(우선순위가 높은지 확인)
+## 맞다면 pop 아니라면 큐의 맨뒤로 다시 append.
