@@ -1,6 +1,4 @@
-import time
-
-s= time.time() # 시작 시간
+### 10815
 
 n = int(input()) # 상근이가 가지고 있는 숫자 카드의 개수
 nums_list = list(map(int, input().split())) #  숫자 카드에 적혀있는 정수
@@ -16,9 +14,6 @@ for x in correct:
         correct_list.append(0)
 
 print(correct_list)
-
-e= time.time()
-print(f"{e - s:.5f} sec")
 
 ### 위 제출결과 : 시간 초과.
 
